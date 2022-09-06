@@ -8,6 +8,8 @@ import { checkFormat } from "./service/checkFormat.js";
 
 const app = express();
 
+const PORT = process.env.PORT || 3001;
+
 app.use(cors());
 app.use(express.json());
 app.use(
@@ -71,6 +73,6 @@ app.post("/api", async (req, res) => {
   }
 });
 
-app.listen(3838, () => {
-  console.log("CORS-enabled web server listening on port 3838");
+app.listen(PORT, () => {
+  console.log(`CORS-enabled web server listening on port ${PORT}`);
 });
